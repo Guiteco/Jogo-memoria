@@ -36,17 +36,14 @@ function display(){
     card.appendChild(cardBack)
 })
 }
-function displayGameOver(){
-    gameBoard.style.display = "none"
-    document.querySelector("#gameOver").style.display = "flex"
-}
+
 function flippedCard(){
     if( game.setCard(this.id)){
         this.classList.add("flip")
         if(game.lockMode){
            if(game.checkMatch()){
                 if(game.gameOver()){
-                    setTimeout(displayGameOver,1000);
+                   document.querySelector("#gameOver").style.display = "flex"
                 }
            }else{
             setTimeout(()=>{ 
