@@ -1,0 +1,81 @@
+body{
+    font-family: "Jaro", sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c7cdd3;
+}
+#gameBoard{
+    background-color: #ccc;
+    max-width: 700px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template:  repeat(5, 1fr)/repeat(4, 1fr);
+    gap: 20px;
+    
+}
+.card{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition:transform 1s;
+  
+}
+.card-front,.card-back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(00,00,00,0.45);
+    backface-visibility: hidden;
+    position: absolute;
+    
+   
+}
+.flip{
+    transform: rotateY(180deg);
+}
+
+ .card-front{
+    transform: rotateY(180deg);
+    background-color: #101c2c;
+   
+ }
+ .card-back{
+    background-color: #05c3ff;
+    font-size: 50px;
+   
+ }
+ #gameOver{
+    background-color: rgba(00,00,00,0.9);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+ }
+ #gameOver p{
+    color: #ccc;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    font-family: "Jaro", sans-serif;
+ }
+ .restart{
+    padding: 20px;
+    font-size: 1.6em;
+    background-color: yellow;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+ }
+.restart:hover{
+    transform: scale(105%);
+}
